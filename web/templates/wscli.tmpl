@@ -46,7 +46,7 @@
     <input id="m" autocomplete="off"/><br/>
     <button id="leave-btn">Leave</button>
     <button id="msg-btn">Send Msg</button>
-    <button id="start-cf-btn">bet order</button>
+    <!--<button id="start-cf-btn">bet order</button>-->
 </form>
 
 <div id="profile" class="modal">
@@ -70,7 +70,8 @@
 
     var username = '';
     var roomId = '';
-    var randomId = "unique_user_id_"+username+"_"+Math.floor((Math.random() * 1000) + 1);
+    // var randomId = "unique_user_id_"+username+"_"+Math.floor((Math.random() * 1000) + 1);
+    var randomId = username+"_"+Math.floor((Math.random() * 1000) + 1);
     var socket;
 
     var wshost = getParameterByName('wshost');
@@ -80,7 +81,8 @@
 
     $('#profile button').click(function() {
         username = $('#username').val();
-        randomId = randomId + username;
+        // randomId = randomId + username;
+        randomId = username;
 
         $('#profile').hide();
         $('.jquery-modal').hide();
@@ -90,7 +92,7 @@
             transports: ['websocket'],
             query: {
                 userAccount: "jimchung",
-                origin: encodeURI("http://blc.testoce.cp.baochi888.com"),
+                origin: encodeURI("http://weiwen.tw"),
                 userToken: "bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NDg5MjM0NTYsInVzZXJfbmFtZSI6ImJsY3xqaW1jaHVuZ3wyNTEyIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImp0aSI6Ijc0ZWI1NDA2LTVkNTUtNDg3OC05NDEzLTFmZDZkODc2ODBlNSIsImNsaWVudF9pZCI6IndlYl9hcHAiLCJzY29wZSI6WyJvcGVuaWQiXX0.PelKQy4JERGJAXS1Jn76WtwVt_DEhYrr8QsjC_qo8dmjJdweirkfw_k5FNdT8mhmaN0KCklXmU-Is4tHrwE9QA3CKK_PIGZeJbRXFa1USzaQ5U2HEZ8Q0E-KPROoWelG-g2gzNtbL5c042Asw_rkSAFqYmd9N9NpbI1jH_qgUyY9HsJ0MDQBG7Whri9lghYsmDPxXE99kI8uqeeM0qMM_V0_suPHhPqDpdtzwQJHzIJ-CmvUJ-5bleV7Q-kgNiUbNiClYbsZ3rNBeRJTBnao61NmezJdCOo1ejdPQKJaKdnW9WZRCDMt5lAq7tsmNPa48EdpSapfrkknH_CJf5juKA",
                 from: "FRONT",
             }

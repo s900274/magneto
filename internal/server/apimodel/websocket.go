@@ -1,9 +1,5 @@
 package apimodel
 
-import (
-    "fmt"
-)
-
 type TokenVerification struct {
     UserToken string `json:"userToken"`
     UserAccount string `json:"userAccount"`
@@ -17,7 +13,8 @@ type Account struct {
 
 func (s *Account)SetAccount(account string)  {
 
-    s.UserAccount = fmt.Sprintf("%s***", account[0:len(account)-3])
+    //s.UserAccount = fmt.Sprintf("%s***", account[0:len(account)-3])
+    s.UserAccount = account
 }
 
 type ChatMessageRequest struct {

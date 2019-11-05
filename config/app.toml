@@ -9,7 +9,7 @@ http_server_port        = 5000
 host                    = '0.0.0.0'
 
 [redisCfg]
-    redis_svr               = ["redis1"]
+    redis_svr               = ["redis1:6379"]
     redis_conn_timeout      = 1000                      # redis连接超时 毫秒
     redis_read_timeout      = 500                       # redis读超时 毫秒
     redis_write_timeout     = 500                       # redis写超时 毫秒
@@ -19,7 +19,7 @@ host                    = '0.0.0.0'
 
 
 [kafkaProducerCfg]
-    brokerlist      = "kafka1"
+    brokerlist      = "kafka1:9092"
     batchnum        = 3
     partitionnum    = 10
     producenum      = 1

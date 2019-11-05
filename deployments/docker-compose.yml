@@ -5,7 +5,7 @@ services:
     depends_on:
       - kafka1
     ports:
-      - "9308:9308"
+      - "5000:5000"
     environment:
       ENVIRONMENT: testoce
       PRJ_BROKER_LIST: kafka1:9092

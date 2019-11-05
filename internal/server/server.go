@@ -162,7 +162,7 @@ func socketHandler(ctx *gin.Context) {
 
             respMsg := apimodel.ChatMessageResponse{}
             respMsg.Msg = msgObj.Msg
-            respMsg.SetAccount("User1")
+            respMsg.SetAccount(msgObj.UUID)
 
             msgString := apimodel.WSRespFmt(
                 respMsg,

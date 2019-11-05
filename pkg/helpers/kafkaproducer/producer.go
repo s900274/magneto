@@ -80,7 +80,7 @@ func AddNewTopic(brokerlist string, partitionnum int, topic string) (error) {
     admin, err := sarama.NewClusterAdmin(strings.Split(brokerlist, ","), config)
 
     if err != nil {
-        logger.Error("Failed to Connect kafka broker;err: %v", err)
+        logger.Error("Failed to Connect kafka broker;err: %v, brokerList: %v", err, brokerlist)
         return err
     }
 

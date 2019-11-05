@@ -1,5 +1,4 @@
-GOPATH:=$(CURDIR)/../../../../
-export GOPATH
+export GO111MODULE=on
 
 export CGO_ENABLED=0
 
@@ -8,8 +7,7 @@ all: bld
 bld: magneto
 
 magneto:
-	govendor sync
-	go build -o bin/magneto github.com/s900274/magneto/cmd/magneto
+	go build -o bin/magneto ./cmd/magneto
 
 clean:
 	@rm -f init/magneto
