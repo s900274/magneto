@@ -2,32 +2,17 @@
 
 ## Requirements
 
-Go Version : >= 1.5
+Go Version : >= 1.11
 
-Govendor : https://github.com/kardianos/govendor (Follow the installation guide)
+Docker
 
 ## Get started
 
-1. Clone the repository from the Gitlab to your GOPATH ($GOPAHT/src/github.com/s900274/)
+1. Move to the repository folder
 
-2. Move to the repository folder
-
-3. Execute
+2. Execute
 ```
- $ ./scripts/initialization_project.sh <Your_Project_Name>
-```
-
-4. Execute govendor sync
-```
-$ govendor sync
-```
-
-5. Generate swagger files
-```
-$ cd internal/httpservice
-```
-```
-$ ../../tools/swagger/swag init -g httpserver.go -s ../../api/swagger
+ $ ./docker.sh <Your_Project_Name>
 ```
 
 6. Good luck
